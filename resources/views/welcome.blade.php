@@ -35,41 +35,15 @@
             }
 
             .top-right {
-                border : 1px solid #E76D13;
+             font-size: x-large;
                 position: absolute;
-                right: 10px;
+                right: 30px;
                 top: 18px;
             }
-            .top-right:hover {
-                box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
-                background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-                color: #a00;
-            }
-            .top-right-auth {
-                border : 1px solid #E76D13;
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-            .top-right-auth:hover {
-                box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
-                background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-                color: #a00;
-            }
-            .top-right-reg {
-                border : 1px solid #E76D13;
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-            .top-right-reg:hover {
-                box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
-                background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-                color: #a00;
-            }
+
             .content {
                 text-align: center;
-                margin-bottom: 10%;
+                margin-bottom: 12%;
             }
 
             .title {
@@ -79,7 +53,7 @@
             .links li {
                 display: inline;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: x-large;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-transform: uppercase;
@@ -100,12 +74,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Домой</a>
+                        <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Авторизация</a>
+                        <a href="{{ route('login') }}">Auth</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Регистрация</a>
+                            <a href="{{ route('register') }}">Registration</a>
                         @endif
                     @endauth
                 </div>
@@ -119,7 +93,7 @@
                 <div class="links">
                     @foreach($categories as $category)
                         <li>
-                            <a href="/test/{{$category->id}}">{{$category->category_name}}</a>
+                            <a href="/{{$category->id}}">{{$category->category_name}}</a>
                         </li>
                     @endforeach
                 </div>
