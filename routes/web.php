@@ -16,4 +16,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'CategoryController@index');
-Route::get('/test/{id}', 'CategoryController@distribution');
+Route::get('/{id}', 'CategoryController@distribution');

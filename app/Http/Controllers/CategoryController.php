@@ -17,7 +17,6 @@ class CategoryController extends Controller
     public function distribution($id)
     {
         $galaxies =Category::find($id)->SpObjects;
-        //join('categories' , 'category_id' , '=' , 'categories.id')
         return view('Galaxy', compact('galaxies'));
     }
 }

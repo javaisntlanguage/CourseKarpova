@@ -1,19 +1,20 @@
-<style>
-    html {
-            background: url("http://fonday.ru/images/tmp/10/9/original/109970niBCRIKyL8kn5M5w4ON5.jpg") no-repeat grey ;
-    }
-    li
+<!--<style>-->
+@extends('template')
+@section('style')
+    .galaxy_content li
     {
         text-align: center;
         list-style-type: none;
         font-size: xx-large;
     }
-    ul
+    .galaxy_content ul
     {
         margin-top: 5%;
     }
-
-</style>
+@endsection
+<!--</style>-->
+@section('content')
+<div class="galaxy_content">
 <ul>
     @foreach($galaxies as $galaxy)
         <li>
@@ -21,3 +22,5 @@
         </li>
     @endforeach
 </ul>
+</div>
+@endsection
