@@ -8,6 +8,6 @@ class Category extends Model
 {
     public function SpObjects ()
     {
-        return $this->hasMany('App\SpObject');
+        return $this->hasMany('App\SpObject','category_id', 'id');
     }
 }

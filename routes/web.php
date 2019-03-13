@@ -12,12 +12,16 @@
 */
 
 Auth::routes();
-Route::get('/', 'CategoryController@index');
+Route::get('/', 'CategoryController@index')->name('welcome');
+
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('/home', 'HomeController@index')->name('home');
     Route::group(['middleware' => 'admin'], function () {
         Route::get('/admin', 'AdminController@index')->name('admin');
+        Route::get('/admin/{x}', 'AdminController@table');
+        Route::get('/send', 'AdminController@send')->name('send');
     });
-
     Route::get('/{id}', 'CategoryController@distribution');
+
 });
