@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Universe</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <style>
         html, body {
-            background: url("http://fonday.ru/images/tmp/10/9/original/109970niBCRIKyL8kn5M5w4ON5.jpg") no-repeat ;
+            background: url("http://fonday.ru/images/tmp/10/9/original/109970niBCRIKyL8kn5M5w4ON5.jpg") no-repeat fixed;
             color: white;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
@@ -45,9 +45,9 @@
 
         }
         .title {
-            position: fixed;
+            position: absolute;
             top: 20%;
-            left: 38%;
+            left: 42%;
             font-size: 84px;
         }
         .content {
@@ -81,7 +81,7 @@
 </div>
     <div class="content">
         <div class="title m-b-md">
-            <a href="/">The Universe</a>
+            <a href="/">{{config('app.name')}}</a>
         </div>
 @yield('content')
 </div>

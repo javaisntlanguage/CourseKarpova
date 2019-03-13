@@ -1,8 +1,13 @@
 <!--<style>-->
-@extends('template')
+@extends('layouts.template')
 @section('style')
+    .galaxy_content
+    {
+    margin-top: 200%;
+    }
     .galaxy_content li
     {
+        padding-top: 10%;
         text-align: center;
         list-style-type: none;
         font-size: xx-large;
@@ -18,7 +23,8 @@
 <ul>
     @foreach($galaxies as $galaxy)
         <li>
-            {{$galaxy->sp_object_name}}
+            <img width="500" height="400" src={{$galaxy->image}}>
+            <p>{{$galaxy->sp_object_name}}</p>
         </li>
     @endforeach
 </ul>

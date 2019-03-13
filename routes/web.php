@@ -12,8 +12,12 @@
 */
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/', 'CategoryController@index');
-Route::get('/{id}', 'CategoryController@distribution');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['middleware' => 'admin'], function () {
+        Route::get('/admin', 'AdminController@index')->name('admin');
+    });
+
+    Route::get('/{id}', 'CategoryController@distribution');
+});

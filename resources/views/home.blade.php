@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!<br>
+
+                    @if(\Auth::user()->isAdmin == 1)
+                        <a href="{{route('admin')}}">Админка</a><br>
+                    @endif
                 </div>
             </div>
         </div>

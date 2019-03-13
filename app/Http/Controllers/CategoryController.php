@@ -11,12 +11,12 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = DB::table('categories')->get();
-        return view('welcome', compact('categories'));
+        return view('main.welcome', compact('categories'));
     }
 
     public function distribution($id)
     {
         $galaxies =Category::find($id)->SpObjects;
-        return view('Galaxy', compact('galaxies'));
+        return view('main.Galaxy', compact('galaxies'));
     }
 }
