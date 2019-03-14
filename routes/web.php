@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'admin'], function () {
         Route::get('/admin', 'AdminController@index')->name('admin');
         Route::get('/admin/{x}', 'AdminController@table');
-        Route::get('/send', 'AdminController@send')->name('send');
+        Route::post('/admin/categories', 'AdminController@CategoriesSend');
     });
     Route::get('/{id}', 'CategoryController@distribution');
 

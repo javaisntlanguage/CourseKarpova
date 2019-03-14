@@ -23,20 +23,21 @@
                 </tbody>
             </table>
         </div>
-        @if($x == "sp_objects" or $x == "categories" )
-            <button class="js-show-form">Добавить запись</button>
-            <form class="js-form hidden">
+            <button class="js-show-form form-control">Add category</button>
+            <form class="js-form hidden" method="post">
+                {{ csrf_field() }}
                 @foreach($columns as $val)
+                    @if($val == 'category_name')
                     <label>
                         {{$val}}
-                        <input type="text" name="name" />
+                        <input type="text" autocomplete="off" name="{{$val}}" class="form-control"/>
                     </label>
+                    @endif
                 @endforeach
                 <label>
-                    <a href="{{route('send')}}">Отправить</a>
+                    <button class="form-control">Send</button>
                 </label>
             </form>
-        @endif
     </main>
 
 @endsection
