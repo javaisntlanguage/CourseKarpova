@@ -8,32 +8,33 @@
                 <thead>
                 <tr>
                     @foreach($columns as $value)
-                    <th>{{$value}}</th>
+                        <th>{{$value}}</th>
                     @endforeach
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($oneTable as $cols)
-                <tr>
-                    @foreach($columns as $val)
-                    <th>{{$cols->$val}}</th>
-                    @endforeach
-                </tr>
+                    <tr>
+                        @foreach($columns as $val)
+                            <th>{{$cols->$val}}</th>
+                        @endforeach
+                    </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
         @if($x == "sp_objects" or $x == "categories" )
-            <button class="js-show-form">Добавить запись</button>
-            <form class="js-form hidden">
+            <button class="js-show-form form-control">Добавить запись</button>
+            <form class="js-form hidden" method="post">
+                {{ csrf_field() }}
                 @foreach($columns as $val)
                     <label>
                         {{$val}}
-                        <input type="text" name="name" />
+                        <input type="text" name="{{$val}}" class="form-control"/>
                     </label>
                 @endforeach
                 <label>
-                    <a href="{{route('send')}}">Отправить</a>
+                    <button class="form-control">Отправить</button>
                 </label>
             </form>
         @endif
