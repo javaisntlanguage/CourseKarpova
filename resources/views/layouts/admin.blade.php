@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{{config('app.name')}} {{\Auth::user()->name}}</title>
+    <title>Косметика {{\Auth::user()->name}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
 
@@ -37,20 +37,20 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     <link href="{{asset('css/alertify.css')}}" type="text/css" rel="stylesheet" />
-    <link href="{{asset('css/themes/default.css')}}" type="text/css" rel="stylesheet" id="toggleCSS" />
+
 </head>
-<body>
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('welcome')}}">{{config('app.name')}}</a>
+<body style="background-color: rgb(255, 192, 203)!important;">
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="background-color: rgb(255, 20, 147)!important;">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('welcome')}}">Косметика</a>
 
 
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
+            <div class="sidebar-sticky" style="background-color: rgb(255, 182, 193)!important;">
+                <ul class="nav flex-column" >
                     @foreach($tables as $table)
                         @if(head($table) == 'categories' or head($table) == 'sp_objects' or head($table) == 'users')
                     <li class="nav-item">
@@ -68,9 +68,7 @@
     </div>
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 <script src="{{asset('js/alertify.js')}}"></script>
 @include('inc.messages')
 <script>

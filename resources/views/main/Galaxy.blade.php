@@ -3,7 +3,7 @@
 @section('style')
     .galaxy_content
     {
-    margin-top: 200%;
+    margin-top: 100%;
     }
     .galaxy_content li
     {
@@ -25,6 +25,7 @@
         <li>
             <img width="500" height="400" src={{$galaxy->image}}>
             <p>{{$galaxy->sp_object_name}}</p>
+            <p>{{$galaxy->sp_object_description}}</p>
         </li>
     @endforeach
 </ul>

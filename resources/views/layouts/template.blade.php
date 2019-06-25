@@ -3,16 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{config('app.name')}}</title>
+    <title>Косметика</title>
 
     <!-- Fonts -->
+    <style>@font-face
+    {
+            font-family: myFont;
+            src: url('{{ public_path('fonts/myFont.tff') }}');
+    }
+    </style>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <style>
         html, body {
-            background: url("http://fonday.ru/images/tmp/10/9/original/109970niBCRIKyL8kn5M5w4ON5.jpg") no-repeat fixed;
+            background: url("http://oboia.org/data/media/510/Digital-Art-Girl-Silhouette-Wallpaper-40.jpg") no-repeat fixed;
             color: white;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'myFont', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -59,7 +65,7 @@
         }
         a {text-decoration: none;
             color: white;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'myFont', sans-serif;
         }
         @yield('style')
     </style>
@@ -71,17 +77,17 @@
             @auth
                 <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
             @else
-                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('login') }}">Войти</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Registration</a>
+                    <a href="{{ route('register') }}">Регистрация</a>
                 @endif
             @endauth
     @endif
 </div>
     <div class="content">
         <div class="title m-b-md">
-            <a href="/">{{config('app.name')}}</a>
+            <a href="/">Косметика</a>
         </div>
 @yield('content')
 </div>

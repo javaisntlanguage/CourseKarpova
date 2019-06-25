@@ -23,7 +23,7 @@
                 </tbody>
             </table>
         </div>
-            <button class="js-show-form form-control">Add category</button>
+            <button class="js-show-form form-control">Добавить категорию</button>
             <form class="js-form hidden" method="post">
                 {{ csrf_field() }}
                 @foreach($columns as $val)
